@@ -66,15 +66,13 @@ public class Ej3_Rueda {
 			r1.rodar(75000);
 			r1.pinchar();
 			r2.rodar(34500);
-			
-			r1.println();
-			r2.println();
-			
 			r1.rodar(5);
 		}
 		catch (Exception e)
 		{
 			System.out.println(e.getMessage());
 		}
+		r1.println();
+		r2.println();
 	}
 }
