@@ -10,7 +10,7 @@ public class EchoClient {
         PrintWriter out = null;
         BufferedReader in = null;
         try {
-            echoSocket = new Socket(host, 22);
+            echoSocket = new Socket(host, 22);		//puerto ssh
             out = new PrintWriter(echoSocket.getOutputStream(), true);
             in = new BufferedReader(new InputStreamReader(
                                         echoSocket.getInputStream()));
@@ -18,8 +18,7 @@ public class EchoClient {
             System.err.println("Host desconocido: "+host);
             System.exit(1);
         } catch (IOException e) {
-            System.err.println("No se pudo abrir E/S "
-                               + "a : "+host);
+            System.err.println("No se pudo abrir E/S a: "+host);
             System.exit(1);
         }
 
