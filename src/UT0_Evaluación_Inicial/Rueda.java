@@ -20,9 +20,7 @@ public class Rueda {
 
 	// Rueda Estándar
 	Rueda() {
-		this.diametroPulgadas = 16;
-		this.anchuraNominalMm = 205;
-		this.ratioAspectoPc = 55;
+		this(16,205,55);
 	}
 
 	public void rodar(int km) throws Exception {

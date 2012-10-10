@@ -16,11 +16,7 @@ public class Camión extends Coche {
 	}
 
 	Camión() {
-		tara=8500;
-		pma=24000;
-		rr = new Rueda[6];
-		for (int i = 0; i < rr.length; i++)
-			rr[i]=new Rueda();
+		this(8500.,24000.,6);
 	}
 
 	public void rodar(int km) throws Exception {

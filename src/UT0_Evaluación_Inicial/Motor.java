@@ -14,8 +14,7 @@ public class Motor {
 
 	// Motor Estándar
 	Motor() {
-		cubicajeCC=1900;
-		potenciaCV=105;
+		this(1900,105);
 	}
 
 	public void rodar(int km) throws Exception {
