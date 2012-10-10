@@ -1,6 +1,6 @@
 package UT0_Evaluación_Inicial;
 
-public class Ej3_Rueda {
+public class Rueda {
 
 	private int diametroPulgadas;
 	private int anchuraNominalMm;
@@ -10,7 +10,7 @@ public class Ej3_Rueda {
 	private boolean pinchada = false;
 	private boolean cambiar = false;
 
-	Ej3_Rueda(int diametroPulgadas, int anchuraNominalMm,
+	Rueda(int diametroPulgadas, int anchuraNominalMm,
 			int ratioAspectoPc) {
 		this.diametroPulgadas = diametroPulgadas;
 		this.anchuraNominalMm = anchuraNominalMm;
@@ -18,7 +18,7 @@ public class Ej3_Rueda {
 	}
 
 	// Rueda Estándar
-	Ej3_Rueda() {
+	Rueda() {
 		this.diametroPulgadas = 16;
 		this.anchuraNominalMm = 205;
 		this.ratioAspectoPc = 55;
@@ -56,12 +56,12 @@ public class Ej3_Rueda {
 	}
 	
 	public void println() {
-		print();
+		this.print();
 		System.out.print('\n');
 	}
 	
 	public static void main(String[] args) {
-		Ej3_Rueda r1=new Ej3_Rueda(), r2=new Ej3_Rueda(165,14,175);
+		Rueda r1=new Rueda(), r2=new Rueda(165,14,175);
 		try {
 			r1.rodar(75000);
 			r1.pinchar();

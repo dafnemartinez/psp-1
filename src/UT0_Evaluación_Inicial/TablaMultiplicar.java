@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Ej2_TablaMultiplicar {
+public class TablaMultiplicar {
 
 	private static BufferedReader br;
 
