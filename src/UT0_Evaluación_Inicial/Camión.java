@@ -1,5 +1,6 @@
 package UT0_Evaluación_Inicial;
 
+
 public class Camión extends Coche {
 	private double tara;
 	private double pma;
