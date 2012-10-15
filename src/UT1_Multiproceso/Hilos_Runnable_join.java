@@ -1,11 +1,8 @@
 package UT1_Multiproceso;
 
-import java.util.Random;
-
-public class Hilos_Runnable_interrupt implements Runnable {
+public class Hilos_Runnable_join implements Runnable {
+	private static final long segundos=86400;
     public void run() {
-    	Random r=new Random();
-    	int segundos=r.nextInt(10) + 1;
         System.out.println("Sueño: me voy a dormir "+segundos+" seg...");
         try {
         	Thread.sleep(segundos*1000);
@@ -17,15 +14,17 @@ public class Hilos_Runnable_interrupt implements Runnable {
     }
 
     public static void main(String args[]) throws InterruptedException {
+    	final long segundos=5;
     	Thread [] t=new Thread[5];
 
     	for (int i=0; i<t.length; i++) {
-    		t[i]=new Thread(new Hilos_Runnable_interrupt());
+    		t[i]=new Thread(new Hilos_Runnable_join());
     		t[i].start();
     	}
-    	System.out.println("Esperando a que mis hilos terminen...");
+    	System.out.println("Os dejo dormir "+segundos+" segundos, hilos mios...");
+    	Thread.sleep(segundos*1000);
+    	System.out.println("Se acabó el descanso!");
     	for (int i=0; i<t.length; i++)
-    		t[i].join();
-    	System.out.println("Adiós!");
+    		t[i].interrupt();
     }
 }
