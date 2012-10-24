@@ -1,8 +1,8 @@
-package UT1_Multiproceso;
+package UT2_Multihilo;
 
 import java.util.Random;
 
-public class Hilos_Runnable_interrupt implements Runnable {
+public class Hilos05 implements Runnable {
     public void run() {
     	Random r=new Random();
     	int segundos=r.nextInt(10) + 1;
@@ -20,7 +20,7 @@ public class Hilos_Runnable_interrupt implements Runnable {
     	Thread [] t=new Thread[5];
 
     	for (int i=0; i<t.length; i++) {
-    		t[i]=new Thread(new Hilos_Runnable_interrupt());
+    		t[i]=new Thread(new Hilos05());
     		t[i].start();
     	}
     	System.out.println("Esperando a que mis hilos terminen...");

@@ -1,6 +1,6 @@
-package UT1_Multiproceso;
+package UT2_Multihilo;
 
-public class SimpleThreads {
+public class Hilos04 {
 
     // Muestra un mensaje precedido con el nombre el hilo actual
     static void threadMessage(String message) {
@@ -54,7 +54,7 @@ public class SimpleThreads {
 
         threadMessage("Arrancando el hilo...");
         long startTime = System.currentTimeMillis();
-        Thread t = new Thread(new MessageLoop());	//creamos un Hilo, pero no de la clase SimpleThreads, sino MessageLoop
+        Thread t = new Thread(new MessageLoop());	//creamos un Hilo, pero no de la clase Hilos04, sino MessageLoop
         t.start();
 
         threadMessage("Esperando a que termine el bucle de mensajes");

@@ -1,6 +1,6 @@
-package UT1_Multiproceso;
+package UT2_Multihilo;
 
-public class Hilos_Runnable implements Runnable {
+public class Hilos02 implements Runnable {
 //Forma recomendada de crear un hilo
 //Ventaja: la clase podría extender a cualquier clase 
     public void run() {
@@ -14,6 +14,6 @@ public class Hilos_Runnable implements Runnable {
 
     public static void main(String args[]) {
     for (int i=1; i<=5; i++)
-        (new Thread(new Hilos_Runnable())).start();
+        (new Thread(new Hilos02())).start();
     }
 }

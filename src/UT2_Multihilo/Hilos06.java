@@ -1,6 +1,6 @@
-package UT1_Multiproceso;
+package UT2_Multihilo;
 
-public class Hilos_Runnable_join implements Runnable {
+public class Hilos06 implements Runnable {
 	private static final long segundos=86400;
     public void run() {
         System.out.println("Sueño: me voy a dormir "+segundos+" seg...");
@@ -18,7 +18,7 @@ public class Hilos_Runnable_join implements Runnable {
     	Thread [] t=new Thread[5];
 
     	for (int i=0; i<t.length; i++) {
-    		t[i]=new Thread(new Hilos_Runnable_join());
+    		t[i]=new Thread(new Hilos06());
     		t[i].start();
     	}
     	System.out.println("Os dejo dormir "+segundos+" segundos, hilos mios...");

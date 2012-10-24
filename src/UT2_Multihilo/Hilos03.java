@@ -1,6 +1,6 @@
-package UT1_Multiproceso;
+package UT2_Multihilo;
 
-public class Hilos_Runnable_sleep implements Runnable {
+public class Hilos03 implements Runnable {
 
     public void run() {
         System.out.println("Nuevo hilo");
@@ -21,6 +21,6 @@ public class Hilos_Runnable_sleep implements Runnable {
 
     public static void main(String args[]) throws InterruptedException {
     for (int i=1; i<=5; i++)
-        (new Thread(new Hilos_Runnable_sleep())).start();
+        (new Thread(new Hilos03())).start();
     }
 }
