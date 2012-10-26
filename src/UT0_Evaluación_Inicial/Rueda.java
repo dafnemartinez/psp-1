@@ -1,6 +1,5 @@
 package UT0_Evaluación_Inicial;
 
-
 public class Rueda {
 
 	private int diametroPulgadas;
@@ -23,18 +22,22 @@ public class Rueda {
 		this(16,205,55);
 	}
 
-	public void rodar(int km) throws Exception {
+	public void rodar(int km) throws RuedaPinchadaException {
 		if (! pinchada) {
 			this.rodaduraKm += km;
 			if (rodaduraKm >= limiteKm) {
 				cambiar = true;
 			}
 		} else
-			throw new Exception("Esta pinchada, no puedes rodar!");
+			throw new RuedaPinchadaException("Esta pinchada, no puedes rodar!");
 	}
 
 	public void pinchar() {
 		pinchada = true;
+	}
+	
+	public boolean esta_pinchada() {
+		return pinchada;
 	}
 
 	public void reparar() {
@@ -60,14 +63,17 @@ public class Rueda {
 	}
 	
 	public static void main(String[] args) {
-		Rueda r1=new Rueda(), r2=new Rueda(165,14,175);
+		Rueda r1=new Rueda(), r2=new Rueda(14,165,65);
 		try {
 			r1.rodar(75000);
 			r1.pinchar();
 			r2.rodar(34500);
 			r1.rodar(5);
+			r2.rodar(100);
+			r2.pinchar();
+			r1.reparar();
 		}
-		catch (Exception e)
+		catch (RuedaPinchadaException e)
 		{
 			System.out.println(e.getMessage());
 		}

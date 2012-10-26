@@ -42,9 +42,7 @@ public class Camión extends Coche {
 	public static void main(String[] args) {
 		Camión c=new Camión();
 		try {
-			c.rodar(1000);
-			c.rodar(2000);
-			c.rodar(512);
+			c.rodar(350000);
 		}
 		catch (Exception e)
 		{

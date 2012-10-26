@@ -4,10 +4,10 @@ import java.util.regex.*;
 
 public class NIF_NIE {
 
-	private static final String excepcionMsg="NIF Infcorrecto";
+	private static final String excepcionMsg="NIF Incorrecto";
 	private static final String letras = "TRWAGMYFPDXBNJZSQVHLCKE";
 	private static final Pattern nifPattern =
-	   Pattern.compile("(\\d{1,8})-?(["+letras+letras.toLowerCase()+"])");
+	   Pattern.compile("([XYZ])?-?(\\d{1,8})-?(["+letras+letras.toLowerCase()+"]?)");
 	
 	private char letra_ini;
 	private int n;
@@ -16,27 +16,30 @@ public class NIF_NIE {
 	NIF_NIE(String nif) throws Exception
 	{
 	   //si es NIE
-	   if (nif.toUpperCase().startsWith("X")||
-		   nif.toUpperCase().startsWith("Y")||
-		   nif.toUpperCase().startsWith("Z") )
-		   letra_ini = nif.charAt(0);
-	   else
-		   letra_ini=' ';
-	 
 	   Matcher m = nifPattern.matcher(nif);
 	
-	   if(m.matches()){
-		   n=Integer.parseInt(m.group(1));
-		   letra_fin= m.group(2).charAt(0);
+	   if(m.matches()){   //se cumple el patrón regex
+
+		   if (m.group(1).length()==0)	// viene sin letra
+			   letra_ini=' ';
+		   else
+			   letra_ini=m.group(1).charAt(0);
+		   
+		   n=Integer.parseInt(m.group(2));
 		   
 		   //comprobar el cálculo de la letra
 	       int resto = n % 23;
-	       
-	       if (letras.charAt(resto)!=letra_fin)
+
+		   if (m.group(3).length()==0)	// viene sin letra
+			   letra_fin=letras.charAt(resto);
+		   else	//sí que hay letra
+			   letra_fin=m.group(3).charAt(0);
+		   
+	       if (letras.charAt(resto)!=letra_fin)  //comprobar letra 
 	    	   throw new Exception(excepcionMsg);
 	   }
 	   else
-		   throw new Exception("excepcionMsg");
+		   throw new Exception(excepcionMsg);
 	}
 	
 	public void print() {
@@ -51,7 +54,7 @@ public class NIF_NIE {
 	public static void main(String [] args) {
 		NIF_NIE n=null;
 		try {
-			n=new NIF_NIE("22214412T");
+			n=new NIF_NIE("22214412");
 		}
 		catch (Exception e) {
 			System.out.println(e.getMessage());
