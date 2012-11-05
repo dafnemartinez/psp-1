@@ -3,7 +3,7 @@ package UT1_multiproceso;
 import java.util.*;
 import java.io.*;
 
-public class Proceso01 {
+public class E02_ProcessBuilder {
 
 	public static void main(String [] args)
 	{
