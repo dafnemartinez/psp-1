@@ -5,7 +5,7 @@ import java.util.*;
 
 // Este programa crea un proceso de sistema nuevo con un comando "pwd" y variables de entorno.
 
-public class CmdProcessBuilder {
+public class E02_CmdProcessBuilder {
   public static void main(String args[]) 
      throws InterruptedException,IOException 
   {

@@ -4,7 +4,7 @@ package UT1_multiproceso;
 
 	//captura la salida (stdio) de un proceso externo
 	
-	public class Exec {
+	public class E01_Execute {
 	  public static void main(String args[]) {
 	    try {
 	      String linea;
