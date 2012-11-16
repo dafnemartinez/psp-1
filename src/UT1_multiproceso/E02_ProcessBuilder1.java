@@ -1,6 +1,5 @@
 package UT1_multiproceso;
 
-import java.util.*;
 import java.io.*;
 
 public class E02_ProcessBuilder1 {
@@ -25,11 +24,11 @@ public class E02_ProcessBuilder1 {
 		ProcessBuilder redirectOutput(File f): cambia stdout
 		process start(): arranca el proceso del objeto invocante.
 		*/
-		Process p=null;
+
 		ProcessBuilder builder = new ProcessBuilder("notepad.exe", "prueba.txt");
 		try
 		{
-			p = builder.start();
+			builder.start();	//Devuelve Process, pero no lo usamos
 		} catch (IOException e)
 		{
 		}
