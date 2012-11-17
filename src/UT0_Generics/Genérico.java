@@ -1,4 +1,4 @@
-package UT0_generics;
+package UT0_Generics;
 
 public class Genérico<T> {
 	T ob;
