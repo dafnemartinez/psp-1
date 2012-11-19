@@ -14,7 +14,7 @@ public class Fecha {
 	public static double HALFSECOND = 0.5;
 
 	//Constructor sin argumentos, se construye con la fecha actual
-	Fecha() throws Exception {
+	public Fecha() throws Exception {
 		GregorianCalendar gregorianCalendar=new GregorianCalendar();            
 		mes=gregorianCalendar.get(GregorianCalendar.MONTH)+1;            
 		dia=gregorianCalendar.get(GregorianCalendar.DAY_OF_MONTH);
@@ -22,21 +22,21 @@ public class Fecha {
 	}
 
 	//Constructor por copia
-	Fecha(Fecha f) {
+	public Fecha(Fecha f) {
 		dia=f.getDia();
 		mes=f.getMes();
 		año=f.getAño();
 	}
-	Fecha(String fecha) throws Exception {
+	public Fecha(String fecha) throws Exception {
 		set(fecha);
 	}
 
-	Fecha(int dia, int mes, int año) throws Exception {
+	public Fecha(int dia, int mes, int año) throws Exception {
 		this(dia+sep+mes+sep+año);
 	}
 
 	//Construir fecha a partir de dia juliano (jd). Útil para operar con fechas
-	Fecha(double jd) {
+	public Fecha(double jd) {
 		int jalpha,ja,jb,jc,jdTmp,je;
 		double julian = jd + HALFSECOND / 86400.0;
 		ja = (int) julian;
@@ -159,6 +159,7 @@ public class Fecha {
 		return año;
 	}
 
+	/*
 	public static void main(String[] args) {
 		try {
 			Fecha f=new Fecha(new Fecha("28/2/2000").jd());
@@ -178,4 +179,5 @@ public class Fecha {
 			System.out.println(e.getMessage());
 		};
 	}
+	*/
 } 

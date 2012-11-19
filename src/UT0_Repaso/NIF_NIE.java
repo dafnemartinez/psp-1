@@ -13,7 +13,7 @@ public class NIF_NIE {
 	private int n;
 	private char letra_fin;
 
-	NIF_NIE(String nif) throws Exception
+	public NIF_NIE(String nif) throws Exception
 	{
 	   //si es NIE
 	   Matcher m = nifPattern.matcher(nif);
@@ -51,6 +51,7 @@ public class NIF_NIE {
 		System.out.println();
 	}
 	
+	/*
 	public static void main(String [] args) {
 		NIF_NIE n=null;
 		try {
@@ -61,4 +62,5 @@ public class NIF_NIE {
 		}
 		n.println();
 	}
+	*/
 }
