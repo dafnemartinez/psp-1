@@ -29,7 +29,7 @@ public class P1_CuentaBancariaMS {
 				throw new Exception("Saldo insuficiente: sacando "+dinero+" y solo hay "+this.saldo);
 	}
 
-	public double getSaldo() {
+	public synchronized double getSaldo() {
 		return saldo;
 	}
 

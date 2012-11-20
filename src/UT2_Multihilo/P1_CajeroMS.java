@@ -27,7 +27,7 @@ public class P1_CajeroMS implements Runnable {
 	public static void main(String args []) {
 		P1_CuentaBancariaMS c=null;
 		
-		int numOperaciones=400;
+		int numOperaciones=2000;
 		double saldoInicial=1000;
 		
 		Thread ti[]=new Thread[numOperaciones],
