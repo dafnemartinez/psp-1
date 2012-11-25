@@ -43,7 +43,8 @@ public class E10_PruebaGrupoHilos {
 		//Finalizar
 
 		//No hay join() para grupos, una lástima
-		Thread[] t = new Thread[ha=hilos.activeCount ()];
+		ha=hilos.activeCount();
+		Thread[] t = new Thread[ha];
 		hilos.enumerate(t);
 		System.out.println ("Hilos aún activos en grupo " + hilos);
 		for (int i=0; i<t.length; ++i) {
