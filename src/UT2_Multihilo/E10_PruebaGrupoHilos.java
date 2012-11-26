@@ -47,6 +47,7 @@ public class E10_PruebaGrupoHilos {
 		Thread[] t = new Thread[ha];
 		hilos.enumerate(t);
 		System.out.println ("Hilos aún activos en grupo " + hilos);
+		
 		for (int i=0; i<t.length; ++i) {
 			System.out.println (t[i]);
 		}
