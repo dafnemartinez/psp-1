@@ -4,7 +4,7 @@ import java.util.concurrent.BlockingQueue;
 
 public class P05_Consumidor implements Runnable {
 
-	protected BlockingQueue<Integer> queue = null;
+	private BlockingQueue<Integer> queue = null;
 
 	public P05_Consumidor(BlockingQueue<Integer> queue) {
 		this.queue = queue;
@@ -12,11 +12,15 @@ public class P05_Consumidor implements Runnable {
 
 	public void run() {
 		try {
-			System.out.println(queue.take());
-			System.out.println(queue.take());
-			System.out.println(queue.take());
+			while (true)
+				consumir(queue.take());
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 	}
+	void consumir(Object x) {
+		System.out.println("Consumido "+x);
+	}
 }
+
+

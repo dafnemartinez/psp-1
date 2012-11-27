@@ -4,7 +4,7 @@ import java.util.concurrent.BlockingQueue;
 
 public class P05_Productor implements Runnable{
 
-	protected BlockingQueue<Integer> queue = null;
+	private BlockingQueue<Integer> queue = null;
 
 	public P05_Productor(BlockingQueue<Integer> queue) {
 		this.queue = queue;
@@ -12,13 +12,18 @@ public class P05_Productor implements Runnable{
 
 	public void run() {
 		try {
-			queue.put(1);
-			Thread.sleep(1000);
-			queue.put(2);
-			Thread.sleep(1000);
-			queue.put(3);
+			while (true) {
+				Integer n;
+				queue.put(n=producir());
+				Thread.sleep(500);
+				System.out.println("Producido "+n);
+			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 	}
+    Integer producir() {
+		Integer n=new Integer((int)(Math.random()*10000));
+		return n;
+    }
 }
